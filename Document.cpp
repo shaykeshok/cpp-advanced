@@ -157,7 +157,7 @@ void Document::search(string text)
 {
 	vector<string>::iterator it = index;
 
-	for (int i = getIndex() + 1; i < lines.size(); i++)
+	for (int i = getIndex(); i < lines.size(); i++)
 	{
 		it++;
 		string line = lines[i];
@@ -169,7 +169,7 @@ void Document::search(string text)
 		// return lines[i].find(text);
 	}
 	it = lines.begin();
-	for (int i = 1; i <= getIndex(); i++)
+	for (int i = 0; i <= getIndex(); i++)
 	{
 		string line = lines[i];
 		if (lines[i].find(text) != string::npos)
@@ -184,7 +184,7 @@ void Document::search(string text)
 void Document::replaceText(string oldText, string newText)
 {
 	string str = (*index);
-	int pos = str.find_first_of(oldText);
+	int pos = str.find(oldText);
 	str.replace(pos, oldText.length(), newText);
 	(*index) = str;
 };

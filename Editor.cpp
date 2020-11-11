@@ -88,7 +88,7 @@ void Editor::loop()
 			//The first row found in the search becomes the current row.
 			case '/': //v
 			{         //    '/text/'
-				doc.search(reader.substr(1, reader.length() - 1));
+				doc.search(reader.substr(1, reader.length() - 2));
 				break;
 			}
 			//replace in this line the first time 'old' appear and replace it with 'new'

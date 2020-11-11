@@ -5,9 +5,9 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    if (argc > 0)
-    {
-        Editor ed("months.txt");
+    if (argc > 1)
+    {       
+        Editor ed(argv[1]);
         ed.loop();
     }
     else
@@ -16,6 +16,5 @@ int main(int argc, char *argv[])
         ed.loop();
     }
 
-    
     return 0;
 }
